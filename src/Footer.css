@@ -1,0 +1,53 @@
+/* Footer.css */
+
+.footer {
+    display: flex;
+    height:100px;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 50px; /* Adjust padding as needed */
+    background-color: #e1e1e1; /* Adjust background color to match the screenshot */
+    position: relative; /* Needed for absolute positioning of the line */
+    width: 100vw; /* Make footer full width of the viewport */
+    box-sizing: border-box; /* Ensures padding does not add to the total width */
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 20px; /* Adjust the space between icons as needed */
+  }
+  
+  .social-icons a {
+    color: #000; /* Adjust icon color as needed */
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+  
+  .social-icons a:hover {
+    color: #555; /* Adjust hover color as needed */
+  }
+  
+  .copy-right {
+    color: #fff; /* Adjust text color as needed */
+    font-size: 0.9em; /* Adjust font size as needed */
+    position: absolute;
+    bottom: 0; /* Position at the bottom of the footer */
+    left: 0;
+    width: 100%; /* Full width */
+    background-color: #000; /* Black background */
+    text-align: center; /* Center the text */
+    padding: 5px 0; /* Padding inside the black line */
+  }
+  
+  /* Add this if you want the black line to be a separate element */
+  .black-line {
+    position: absolute;
+    bottom: 0; /* Position at the bottom of the footer */
+    left: 0;
+    width: 100%; /* Full width */
+    height: 4px; /* Height of the black line */
+    background-color: #000; /* Black background */
+  }
+  

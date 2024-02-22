@@ -1,0 +1,59 @@
+.signup-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Adjust height as necessary */
+  }
+  
+  .signup-container {
+    max-width: 300px;
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .signup-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .signup-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .signup-container button:hover {
+    opacity: 0.8;
+  }
+  
+  .signup-container a {
+    color: blue; /* Adjust color based on your design */
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+
+  
+  .signup-container .signup-logo {
+    margin-bottom: 10px;
+  }
+  
+  /* Add additional styles for logo size and form layout if needed */
+  .signup-logo .fa-user-plus {
+    font-size: 8rem; /* Adjust the size of the icon */
+  }
+  
+  /* You can add additional media queries for responsive design */
+  @media (max-width: 768px) {
+    .signup-container {
+      padding: 20px;
+    }
+  }
+  

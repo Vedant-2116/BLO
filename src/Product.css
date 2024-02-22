@@ -1,0 +1,112 @@
+.product-page {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 100vw; 
+
+  }
+  
+  .product-detail {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 90px;
+  }
+  
+  .product-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .company-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .company-name {
+    font-weight: bold;
+    margin-right: 8px;
+    margin-left: 15px;
+  }
+  
+  .new-label {
+    font-size: 0.8em;
+    background-color: red;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+  
+  .product-name {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+
+  .product-actions {
+    display: flex;
+    align-items: center;
+  } 
+   .like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+
+  }
+  
+  .price-tag {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-right: 10px ;
+  }
+  
+  .icon-bar {
+    position: absolute;
+    top: 40%;
+    right: 0;
+   margin-right: 20px;
+  }
+  
+  .size-selector {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .size-button {
+    width: 100%;
+    margin: 0 5px;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    background-color: transparent;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+  
+  .size-button.selected {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .add-to-cart {
+    width: 100%;
+    padding: 5px 0;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 30px;
+  }
+  
+  /* Add media queries if necessary to handle responsiveness */
+  @media (max-width: 768px) {
+    /* Adjust styles for mobile devices */
+  }
+  

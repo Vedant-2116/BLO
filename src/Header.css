@@ -1,0 +1,51 @@
+/* Header.css */
+
+.header {
+  position: fixed; /* Ensures the header stays fixed at the top */
+  display: flex;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: #e1e1e1; /* Adjust background color to match screenshot */
+  box-sizing: border-box; /* Ensures padding doesn't add to the total width */
+  width: 100vw;
+  z-index: 1000; /* Ensures the header is on top of other content */
+}
+
+.header-icons {
+  display: flex;
+  gap: 20px; /* Adjust the space between icons as needed */
+}
+
+.left-icons {
+  order: 1; /* Ensures that this group is on the left */
+}
+
+.right-icons {
+  order: 3; /* Ensures that this group is on the right */
+}
+
+.header-title {
+  order: 2; /* Ensures that the title is in the center */
+  flex-grow: 1; /* Allows the title to take up the flex space */
+  text-align: center; /* Centers the title text */
+  margin: 0; /* Removes default margin from h1 */
+}
+
+.header-icons a {
+  color: #000; /* Adjust icon color as needed */
+  text-decoration: none;
+}
+
+.header-icons a:hover {
+  color: #555; /* Adjust hover color as needed */
+}
+
+/* Ensure the root element has no margin for full width */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}

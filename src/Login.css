@@ -1,0 +1,58 @@
+.login-container {
+    width: 340px; /* Adjust based on your screenshot */
+    height:540px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* or the font used in your design */
+}
+
+.login-container input {
+    width: calc(100% - 20px); /* Input width minus padding */
+    padding: 15px; /* Adjust based on your screenshot */
+    margin: 10px 0;
+    border: 1px solid #ccc; /* Color based on your screenshot */
+    border-radius: 4px; /* Adjust if the inputs have rounded corners */
+    box-sizing: border-box;
+}
+
+.login-container button {
+    width: calc(100% - 20px); /* Button width minus padding */
+    padding: 15px; /* Adjust based on your screenshot */
+    /* margin: 10px 0; */
+    background-color: #000; /* Adjust if needed */
+    color: #fff;
+    border: none;
+    border-radius: 4px; /* Adjust if the buttons have rounded corners */
+    cursor: pointer;
+    box-shadow: none; /* Assuming no shadow based on typical designs */
+}
+
+.login-container button:hover {
+    opacity: 0.85;
+}
+
+.login-container a {
+    display: block;
+    margin: 10px 0; /* Adjust based on your screenshot */
+    color: #000; /* Adjust to match the color from your screenshot */
+    text-decoration: none;
+    font-size: 0.9em; /* Adjust based on your screenshot */
+}
+
+/* FontAwesome icon size and color adjustments */
+.login-logo svg {
+    color: #000; /* Color of the icon */
+    font-size: 8em; /* Size of the icon */
+    margin-top: 80px;
+}
+
+/* Additional styles for layout adjustments */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5; /* Adjust background color if needed */
+}

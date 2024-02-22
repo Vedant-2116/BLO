@@ -1,0 +1,88 @@
+.payment-container {
+  font-family: Arial, sans-serif;
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+  color: #333;
+}
+
+.payment-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.preferred-payment {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+}
+
+.payment-instructions h3 {
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.payment-instructions {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.add-card-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #ccc;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px; /* Match the font size to your design */
+}
+
+.add-card-button:hover {
+  background-color: #f0f0f0;
+}
+
+.plus-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.or-section {
+  font-size: 18px;
+  margin: 40px 0;
+  color: #999;
+}
+
+.payment-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* This will add space between the payment option icons */
+}
+
+.apple-pay,
+.paypal {
+  display: inline-block; /* Display icons in a row */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.apple-pay:hover,
+.paypal:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Since FontAwesome icons are used, we can directly style them */
+.fa-apple-pay,
+.fa-paypal {
+  color: #333; /* Icon color, adjust as needed */
+}
