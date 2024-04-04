@@ -1,0 +1,144 @@
+/* Variables */
+:root {
+  --user-sidebar-width: 250px;
+}
+
+/* General styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fa;
+  display: flex; /* Use flexbox to align items */
+}
+
+.user-panel-container {
+  display: flex;
+  flex: 1; /* Allow main content to take remaining space */
+}
+
+.user-sidebar {
+  width: var(--admin-sidebar-width);
+  background-color: #293241;
+  color: #fff;
+  transition: width 0.3s ease;
+  position: fixed; /* Fix sidebar position */
+  height: 100%; /* Ensure sidebar covers full height */
+  left: 0;
+  top: 10%; /* Align sidebar to the left */
+}
+.user-main-content {
+  margin-top: 250px;
+  height: 100vh; /* Set height to 100% of viewport height */
+  width: calc(100% - 70%); /* Set width to 100% of viewport width minus the width of the sidebar */
+  /* margin: 200px auto; Set margin-left to the width of the sidebar */
+  padding: 10px; /* Add padding for content */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+
+.user-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.user-sidebar ul li {
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-sidebar ul li:hover {
+  background-color: #1e2a38;
+}
+
+.user-sidebar ul li.active {
+  background-color: var(--primary-color);
+}
+.user-bottom-icons {
+  margin-top: 250px; /* Push icons to the bottom */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 90%; /* Ensure icons take full width */
+  bottom: 10%;
+}
+/* Dropdown container */
+.user-dropdown {
+  position: relative;
+}
+
+/* Dropdown toggle button */
+.user-dropdown-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+}
+
+/* Icon within the dropdown toggle button */
+.user-dropdown-toggle .icon {
+  font-size: 1.5rem; /* Increase icon size */
+  margin-right: 5px; /* Add spacing between icon and text */
+  color: #fff;
+}
+
+/* Dropdown menu */
+.user-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px); /* Position below the toggle button */
+  left: 0;
+  z-index: 1000; /* Ensure dropdown is on top of other elements */
+  min-width: 160px;
+  padding: 8px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown menu items */
+.user-dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.user-dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Triangle indicator */
+.user-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  margin-left: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+/* Show dropdown menu when toggled */
+.user-dropdown-toggle:focus + .user-dropdown-menu,
+.user-dropdown-toggle:hover + .user-dropdown-menu {
+  display: block;
+}
+
+.user-main-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: var(--admin-sidebar-width); /* Adjust main content position */
+  top: 10%;
+}

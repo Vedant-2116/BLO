@@ -1,0 +1,99 @@
+/* CSS for the Wish component */
+
+/* Scoped container for product cards */
+.wish-product-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* Individual product card */
+  .wish-product-card {
+    position: relative;
+    flex: 0 0 calc(33.33% - 20px);
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-width: 300px;
+  }
+  
+  /* Container for product image or video */
+  .wish-product-image-container {
+    width: 100%;
+    height: 200px;
+    position: relative;
+  }
+  
+  /* Product image */
+  .wish-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+  }
+  
+  /* Product video */
+  .wish-product-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+    display: none; /* Hidden by default */
+  }
+  
+  /* Show the video when its parent container is being hovered over */
+  .wish-product-image-container:hover .wish-product-video {
+    display: block;
+  }
+  
+  /* Container for product details */
+  .wish-product-details {
+    padding: 20px;
+  }
+  
+  /* Company name */
+  .wish-company-name {
+    font-size: 14px;
+    color: #999;
+  }
+  
+  /* Product name */
+  .wish-product-name {
+    margin: 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  /* Product price */
+  .wish-price {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* New badge */
+  .wish-new-badge {
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  /* Like button */
+  .wish-like-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1;
+  }
+  

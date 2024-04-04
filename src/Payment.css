@@ -1,11 +1,13 @@
 .payment-container {
     display: flex;
-    max-width: 1200px;
-    margin: 40px auto; /* Increase margin for top and bottom */
+    max-width: 80vmax;
+    margin: 140px auto; /* Increase margin for top and bottom */
     padding: 20px;
     box-sizing: border-box;
     background: #fff; /* Assuming a white background */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for styling */
+    margin-left: 280px; /* Half of the space you want outside the container */
+   margin-right: 280px; 
   }
   
   .checkout-header {

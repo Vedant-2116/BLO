@@ -1,13 +1,22 @@
-.signup-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto; /* Adjust height as necessary */
-  }
+
+.signup-body {
+  background-image: url('./img/cloud.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Adjust the height as needed */
+  margin: 0; /* Remove default body margin */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
   
   .signup-container {
     max-width: 300px;
     margin: auto;
+    margin-top: 10px;
     padding: 30px;
     text-align: center;
   }
@@ -49,6 +58,16 @@
   .signup-logo .fa-user-plus {
     font-size: 8rem; /* Adjust the size of the icon */
   }
+  .signup-links {
+    color: white; /* Set the color of the text */
+}
+
+.signup-links a {
+    color: white; /* Set the color of the anchor text */
+    text-decoration: none; /* Optional: Remove underline from anchor text */
+}
+
+
   
   /* You can add additional media queries for responsive design */
   @media (max-width: 768px) {

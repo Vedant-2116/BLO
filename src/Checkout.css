@@ -1,11 +1,14 @@
 /* Checkout.css */
+
 .checkout-container {
-    width: 80%;
-    margin: 0 auto;
+    width:80vmax;
+    margin: 100px auto;
     font-family: 'Arial', sans-serif;
     background: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 130px; /* Half of the space you want outside the container */
+    margin-right: 130px; 
   }
   
   h2{
@@ -76,40 +79,54 @@ text-align: center;
   }
   
   .summary {
-    text-align: right;
-    margin-top: 20px;
+    margin-top: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
   }
   
-  .summary > div {
+  .summary h3 {
+    font-size: 18px;
     margin-bottom: 10px;
   }
   
-  .summary h3, .summary h4 {
-    font-size: 1em;
+  .summary p {
+    font-size: 16px;
+    margin-bottom: 5px;
   }
   
-  .summary p {
-    font-size: 1.2em;
-    color: #333;
-    font-weight: bold;
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .summary-item h4 {
+    flex: 1; /* Title to take up remaining space */
+    margin: 0;
+  }
+  
+  .summary-item p {
+    margin: 0;
   }
   
   .confirm-order {
-    background-color: #007bff;
+    display: block; /* Change display to block */
+    width: 100%; /* Set width to 100% */
+    background-color: blue;
     color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1em;
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
+    padding: 10px 0; /* Adjust padding */
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center; /* Center text */
     margin-top: 20px;
-    text-align: center;
   }
   
+  
   .confirm-order:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
   }
   
 

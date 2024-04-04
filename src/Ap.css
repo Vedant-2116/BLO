@@ -1,0 +1,140 @@
+.AProducts-container {
+  display: flex;
+  margin-left: 300px;
+}
+
+.AProducts-product-list {
+  flex: 1;
+}
+
+.AProducts-product-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: calc(50% - 20px);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-bottom: 100px;
+}
+
+.AProducts-product-card:hover {
+  transform: translateY(-5px);
+}
+
+.AProducts-product-card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.AProducts-product-details {
+  margin-bottom: 10px;
+}
+
+.AProducts-product-details p {
+  margin: 5px 0;
+}
+
+.AProducts-product-media {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.AProducts-product-media img,
+.AProducts-product-media video {
+  margin-top: 50px;
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 5px;
+}
+
+.AProducts-add-product {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.AProducts-add-product h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.AProducts-add-product label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.AProducts-add-product input,
+.AProducts-add-product textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.AProducts-add-product button {
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.AProducts-add-product button:hover {
+  background-color: #0056b3;
+}
+
+.AProducts-edit-form {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.AProducts-edit-form h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.AProducts-edit-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.AProducts-edit-form input,
+.AProducts-edit-form textarea,
+.AProducts-edit-form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.AProducts-edit-form button {
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.AProducts-edit-form button:hover {
+  background-color: #0056b3;
+}
+
+.AProducts-edit-form p {
+  margin-top: 10px;
+}

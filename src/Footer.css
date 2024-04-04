@@ -1,18 +1,19 @@
 /* Footer.css */
 
 .footer {
-    display: flex;
-    height:100px;
-    bottom: 0;
-    left: 0;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 50px; /* Adjust padding as needed */
-    background-color: #e1e1e1; /* Adjust background color to match the screenshot */
-    position: relative; /* Needed for absolute positioning of the line */
-    width: 100vw; /* Make footer full width of the viewport */
-    box-sizing: border-box; /* Ensures padding does not add to the total width */
-  }
+  position: relative; /* Change to fixed position */
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Make the footer span the full width */
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e1e1e1;
+  padding: 20px 50px;
+  box-sizing: border-box;
+}
+
   
   .social-icons {
     display: flex;

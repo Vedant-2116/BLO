@@ -1,10 +1,16 @@
+.login-page {
+    background-image: url('./img/cloud.jpg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+}
+
+
 .login-container {
     width: 340px; /* Adjust based on your screenshot */
-    height:540px;
-    margin: auto;
+    height: 540px;
     padding: 10px;
     text-align: center;
-    font-family: 'Arial', sans-serif; /* or the font used in your design */
+    margin: auto;
 }
 
 .login-container input {
@@ -56,3 +62,12 @@ body {
     margin: 0;
     background-color: #f5f5f5; /* Adjust background color if needed */
 }
+.login-links {
+    color: white; /* Set the color of the text */
+}
+
+.login-links a {
+    color: white; /* Set the color of the anchor text */
+    text-decoration: none; /* Optional: Remove underline from anchor text */
+}
+

@@ -1,112 +1,143 @@
 .product-page {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    width: 100vw; 
+  display: flex;
+  margin-top: 100px;
+  width: 100vw;
+  height: 80vh; /* Full height */
+}
 
-  }
-  
-  .product-detail {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 90px;
-  }
-  
-  .product-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    width: 100%;
-  }
-  
-  .company-info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .company-name {
-    font-weight: bold;
-    margin-right: 8px;
-    margin-left: 15px;
-  }
-  
-  .new-label {
-    font-size: 0.8em;
-    background-color: red;
-    color: white;
-    padding: 2px 6px;
-    border-radius: 3px;
-  }
-  
-  .product-name {
-    flex-grow: 1;
-    text-align: center;
-  }
-  
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
 
-  .product-actions {
-    display: flex;
-    align-items: center;
-  } 
-   .like-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-right: 10px;
+.column:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background-color: #ccc;
+}
 
-  }
-  
-  .price-tag {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-right: 10px ;
-  }
-  
-  .icon-bar {
-    position: absolute;
-    top: 40%;
-    right: 0;
-   margin-right: 20px;
-  }
-  
-  .size-selector {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .size-button {
-    width: 100%;
-    margin: 0 5px;
-    padding: 10px 20px;
-    border: 1px solid #000;
-    background-color: transparent;
-    cursor: pointer;
-    margin-bottom: 30px;
-  }
-  
-  .size-button.selected {
-    background-color: #000;
-    color: #fff;
-  }
-  
-  .add-to-cart {
-    width: 100%;
-    padding: 5px 0;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
-    margin-bottom: 30px;
-  }
-  
-  /* Add media queries if necessary to handle responsiveness */
-  @media (max-width: 768px) {
-    /* Adjust styles for mobile devices */
-  }
-  
+.column:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background-color: #ccc;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: black; /* Add black background */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.image-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: black; /* Add black background */
+}
+
+.icon-bar {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.price-tag {
+  font-size: 1.2em;
+  margin-right: 500px; /* Add space between VR icon and price */
+}
+
+.vr-icon {
+  margin-left: 50px; /* Add space between VR icon and price */
+}
+
+.company-info {
+  margin-bottom: 10px;
+}
+
+.new-label {
+  margin-left: 5px;
+  padding: 3px 5px;
+  background-color: #ff4d4d;
+  color: white;
+  border-radius: 3px;
+}
+
+.product-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.size-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.size-button {
+  margin: 5px;
+  width:18%;
+  padding: 15px 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.add-to-cart {
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center; /* Center vertically */
+}
+
+.column:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Center horizontally */
+}
+
+.add-to-cart:hover {
+  background-color: #0056b3;
+}
+
+.smoke-animation {
+  height: 100%;
+  width: 100%;
+  /* Your smoke animation styles */
+}

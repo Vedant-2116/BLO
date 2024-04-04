@@ -4,8 +4,8 @@ import { faBox, faCreditCard, faCheckCircle } from '@fortawesome/free-solid-svg-
 
 const StepIndicator = ({ currentStep }) => {
   const steps = [
-    { name: 'Review', icon: faCheckCircle },
     { name: 'Shipping', icon: faBox },
+    { name: 'Review', icon: faCheckCircle },
     { name: 'Payment', icon: faCreditCard }
     
   ];

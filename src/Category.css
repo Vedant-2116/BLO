@@ -1,11 +1,21 @@
+
 .categories-page {
   display: flex;
-  font-family: Arial, sans-serif;
+  margin-top: 200px;
+  width: 100vw; /* Full width of the screen */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .sidebar {
-  width: 20%; /* Adjust the width as needed */
-  border-right: 2px solid #cccccc;
+  flex: 0 0 200px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
   padding: 20px;
 }
 
@@ -15,52 +25,86 @@
 }
 
 .category-item {
-  padding: 10px 0;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.main-content {
-  width: 80%;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
+  margin-bottom: 10px;
 }
 
 .product-card {
-  border: 1px solid #cccccc;
+  position: relative;
+  flex-basis: calc(33.33% - 20px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #333;
+  width: 200px;
+  height: 300px;
+}
+
+.product-image-container {
+  position: relative;
+  width: 100%;
+  height: 60%;
   border-radius: 5px;
   overflow: hidden;
 }
 
-.product-card.large {
-  grid-column: span 2; /* Makes the card span two columns */
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit:fill;
 }
 
-.product-card img {
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: block;
+  height: 100%;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  object-fit:contain;
+}
+
+.product-video {
+  width: 100%;
+  height: 100%;
+  object-fit:contain;
 }
 
 .product-details {
-  padding: 15px;
-  text-align: center;
+  padding: 10px;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.company-name {
+  font-size: 14px;
+  color: #999;
 }
 
 .price {
-  color: #333;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .new-badge {
-  background-color: #ff0000;
-  color: white;
-  padding: 5px;
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 0.8em;
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 5px 10px;
   border-radius: 5px;
+}
+
+.like-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
