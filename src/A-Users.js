@@ -49,20 +49,24 @@ const AUsers = () => {
 
   const handleDelete = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:5001/api/users/${userId}`, {
-        method: 'DELETE'
-      });
-      if (response.ok) {
-        console.log('User deleted successfully');
-        // Refresh the user list after deleting user
-        fetchUsers();
-      } else {
-        console.error('Failed to delete user');
-      }
+        const response = await fetch(`http://localhost:5001/api/users/${userId}`, {
+            method: 'DELETE'
+        });
+        const data = await response.json();
+        if (response.ok) {
+            console.log('User deleted successfully');
+            // Check for success message and reload page
+            if (data.message === 'User deleted successfully') {
+                window.location.reload();
+            }
+        } else {
+            console.error('Failed to delete user');
+        }
     } catch (error) {
-      console.error('Error deleting user:', error);
+        console.error('Error deleting user:', error);
     }
-  };
+};
+
 
   const handleEditFormChange = (e) => {
     const fieldName = e.target.name;

@@ -28,11 +28,13 @@ const Login = ({ onLogin }) => {
             const { token, role } = response.data;
             localStorage.setItem('token', token);
             
+            console.log('Role:', role); // Log the role value
+    
             // Redirect user based on role
             if (role === 'admin') {
                 window.location.href = '/Admin'; // Redirect to profile page for admin
             } else {
-                window.location.href = '/home'; // Redirect to home page for user
+                window.location.href = '/Home'; // Redirect to home page for user
             }
         } catch (error) {
             // Handle login error
@@ -49,6 +51,7 @@ const Login = ({ onLogin }) => {
     };
     
     
+    
 
     return (
         <div className="login-container">
@@ -61,9 +64,9 @@ const Login = ({ onLogin }) => {
                 <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
                 <button type="submit">Login</button>
                 <div className="login-links">
-                    <a href="/forgot">Forgot Password?</a>
+                    <a href="/Forgot">Forgot Password?</a>
                     <span> | </span>
-                    <a href="/signup">Sign Up</a>
+                    <a href="/Signup">Sign Up</a>
                 </div>
             </form>
         </div>

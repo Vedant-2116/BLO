@@ -167,13 +167,6 @@ const Profile = () => {
               <div>{userInfo.paymentCard?.expirationDate}</div>
             )}
 
-            <label htmlFor="cvv">CVV:</label>
-            {isEditing ? (
-              <input type="text" id="cvv" name="paymentCard.cvv" value={editedUserInfo.paymentCard?.cvv} onChange={handleInputChange} />
-            ) : (
-              <div>{userInfo.paymentCard?.cvv}</div>
-            )}
-
             {isEditing ? (
               <div>
                 <button name="edit-button" type="submit">Save</button>

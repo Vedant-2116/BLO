@@ -6,6 +6,8 @@ import Dashboard from './A-Dashboard';
 import Users from './A-Users';
 import Products from './A-Products';
 import Orders from './A-Orders';
+import Forgot from './Forgot';
+import Logout from './Logout';
 import './admin.css';
 
 const AdminPanel = () => {
@@ -28,6 +30,8 @@ const AdminPanel = () => {
           <li onClick={() => handleTabClick('USERS')}>USERS</li>
           <li onClick={() => handleTabClick('PRODUCTS')}>PRODUCTS</li>
           <li onClick={() => handleTabClick('ORDERS')}>ORDERS</li>
+          <li onClick={() => handleTabClick('FORGOT')}>FORGOT</li>
+          <li onClick={() => handleTabClick('LOGOUT')}>LOGOUT</li>
           <div className="admin-bottom-icons">
             <li>
               <button className="admin-dropdown-toggle" type="button" id="alertsDropdown">
@@ -60,6 +64,8 @@ const AdminPanel = () => {
         {activeTab === 'USERS' && <Users />}
         {activeTab === 'PRODUCTS' && <Products />}
         {activeTab === 'ORDERS' && <Orders />}
+        {activeTab === 'FORGOT' && <Forgot />}
+        {activeTab === 'LOGOUT' && <Logout />}
       </div>
     </div>
   );

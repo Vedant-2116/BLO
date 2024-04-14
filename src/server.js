@@ -7,6 +7,8 @@ const cors = require('cors');
 const bcrypt = require('bcrypt'); // Import bcrypt for password hashing
 const jwt = require('jsonwebtoken'); // Import jsonwebtoken for token generation
 const jwtSecretKey = '101398199@georgebrown.ca';
+const { spawn } = require('child_process');
+
 const app = express();
 const port = 5001;
 
@@ -105,9 +107,6 @@ const userSchema = new mongoose.Schema({
             expirationDate: {
                 type: String
             },
-            cvv: {
-                type: String
-            }
             // Add other relevant fields for payment card details
         },
         default: {} // Default payment card object
@@ -158,31 +157,32 @@ app.post('/signup', async (req, res) => {
   
   // Login endpoint
 app.post('/login', async (req, res) => {
-    try {
+  try {
       const { username, password } = req.body;
-  
+
       // Find the user by username
       const user = await User.findOne({ username });
       if (!user) {
-        return res.status(401).json({ error: 'Incorrect username or password' });
+          return res.status(401).json({ error: 'Incorrect username or password' });
       }
-  
+
       // Check if the password is correct
       const passwordMatch = await bcrypt.compare(password, user.password);
       if (!passwordMatch) {
-        return res.status(401).json({ error: 'Incorrect username or password' });
+          return res.status(401).json({ error: 'Incorrect username or password' });
       }
-  
+
       // Generate JWT token
       const token = jwt.sign({ userId: user._id }, jwtSecretKey, { expiresIn: '1h' });
-  
+
       // Send token and role in the response
       res.json({ token, role: user.role });
-    } catch (error) {
+  } catch (error) {
       console.error('Login failed:', error);
       res.status(500).json({ error: 'Login failed' });
-    }
-  });
+  }
+});
+
 
   app.get('/api/users', async (req, res) => {
     try {
@@ -224,6 +224,26 @@ app.post('/login', async (req, res) => {
       res.status(500).json({ error: 'Failed to update user data' });
     }
   });
+
+  // DELETE user endpoint
+app.delete('/api/users/:userId', async (req, res) => {
+  try {
+      const { userId } = req.params;
+
+      // Find the user by ID and delete it
+      const deletedUser = await User.findByIdAndDelete(userId);
+
+      if (!deletedUser) {
+          return res.status(404).json({ error: 'User not found' });
+      }
+
+      res.json({ message: 'User deleted successfully' });
+  } catch (error) {
+      console.error('Error deleting user:', error);
+      res.status(500).json({ error: 'Failed to delete user' });
+  }
+});
+
 
   app.put('/api/users/:userId/shipping-details', async (req, res) => {
     try {
@@ -373,6 +393,20 @@ app.get('/api/products', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch products' });
   }
 });
+
+// Route to search products by name
+app.get('/api/products/search', async (req, res) => {
+  try {
+    const query = req.query.q; // Get the search query from the URL query parameter
+    const regex = new RegExp(query, 'i'); // Create a case-insensitive regular expression
+    const searchResults = await Product.find({ name: regex }); // Perform the search
+    res.json(searchResults);
+  } catch (error) {
+    console.error('Failed to search products:', error);
+    res.status(500).json({ error: 'Failed to search products' }); // Send JSON error response
+  }
+});
+
 app.get('/api/products/:productId', async (req, res) => {
     try {
       const productId = req.params.productId;
@@ -414,6 +448,7 @@ app.post('/api/products', async (req, res) => {
     res.status(500).json({ error: 'Failed to create product' });
   }
 });
+
 
 // Route to update a product by ID
 app.put('/api/products/:id', async (req, res) => {
@@ -596,6 +631,36 @@ app.delete('/api/orders/:id', async (req, res) => {
     }
 });
 
+app.post('/chatbot', (req, res) => {
+  const { message } = req.body;
+
+  // Spawn a new Python process
+  const pythonProcess = spawn('python', ['Chatbot.py']);
+
+  let responseData = ''; // Buffer for collecting response data from Python process
+
+  // Handle Python process output
+  pythonProcess.stdout.on('data', (data) => {
+    responseData += data.toString(); // Collect response data
+  });
+
+  // Handle Python process errors
+  pythonProcess.stderr.on('data', (data) => {
+    console.error(`Error from Python script: ${data}`);
+  });
+
+  // Handle Python process completion
+  pythonProcess.on('close', (code) => {
+    console.log(`Python script process exited with code ${code}`);
+    res.json({ response: responseData }); // Send collected response data
+  });
+
+  // Send user message to the Python script
+  pythonProcess.stdin.write(message + '\n');
+
+  // Close stdin to indicate end of input
+  pythonProcess.stdin.end();
+});
 
 // Start the server
 app.listen(port, () => {

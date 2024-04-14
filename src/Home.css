@@ -98,6 +98,6 @@
   /* width: 100%;
   height: 100%; */
   object-fit:contain; /* Ensure video covers entire container */
-  opacity: 0; /* Initially hide the video */
+  opacity: 1; /* Initially hide the video */
   transition: opacity 0.3s ease; /* Smooth transition for opacity */
 }

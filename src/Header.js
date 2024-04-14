@@ -7,13 +7,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faUser, faShoppingCart, faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
+  // Function to handle search icon click
+  const handleSearchIconClick = () => {
+    // Navigate to the search page when search icon is clicked
+    window.location.href = '/Search';
+  };
   return (
     <header className="header">
       <div className="header-icons left-icons">
         {/* Use Link component for navigation */}
-        <Link to="/search">
-          <FontAwesomeIcon icon={faSearch} size="2x" />
-        </Link>
+        <FontAwesomeIcon icon={faSearch} size="2x" onClick={handleSearchIconClick} />
         {/* Use Link component for navigation */}
         <Link to="/User">
           <FontAwesomeIcon icon={faUser} size="2x" />

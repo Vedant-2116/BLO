@@ -4,6 +4,7 @@ import { faVrCardboard } from '@fortawesome/free-solid-svg-icons';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode'; // Import jwtDecode
+import Smoke from '../src/video/smoke.mp4';
 import './Product.css';
 
 const SizeButton = ({ size, isSelected, onSelect }) => (
@@ -177,7 +178,12 @@ const Product = () => {
         </div>
       </div>
       <div className="column">
-        <div className="smoke-animation"></div>
+      <div className="smoke-animation">
+          <video autoPlay loop className="smoke-video">
+            <source src={Smoke} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   );

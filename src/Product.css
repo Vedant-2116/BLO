@@ -136,8 +136,11 @@
   background-color: #0056b3;
 }
 
-.smoke-animation {
-  height: 100%;
+.smoke-video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  /* Your smoke animation styles */
+  height: 100%;
+  object-fit: cover;
 }

@@ -40,7 +40,7 @@ const Signup = ({ onSignup }) => {
 
             console.log('Signup successful:', response.data);
             // Redirect user to login page after successful signup
-            window.location.href = '/login';
+            window.location.href = '/Login';
         } catch (error) {
             console.error('Signup failed:', error.message);
             setError(error.message);
@@ -67,7 +67,7 @@ const Signup = ({ onSignup }) => {
                 <button type="submit">SIGN UP</button>
                 <span> | </span>
                 <div className="signup-links">
-                    <p>ALREADY HAVE AN ACCOUNT? <a href="/login">LOGIN</a></p>
+                    <p>ALREADY HAVE AN ACCOUNT? <a href="/Login">LOGIN</a></p>
                 </div>
             </form>
         </div>

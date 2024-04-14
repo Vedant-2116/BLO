@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import StepIndicator from './StepIndicator';
+import withAuth from './withAuth';
 import "./Shipping.css";
 
 function Shipping() {
@@ -237,4 +238,4 @@ useEffect(() => {
   );
 }
 
-export default Shipping;
+export default withAuth(Shipping);
